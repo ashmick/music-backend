@@ -19,8 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-eilf9xx@ql&p$e!0q(py+b$tr8k!my*o5e&j#s)^vvzf5hflzn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'django',
     'songs',
-
+    
 
 ]
 
@@ -55,7 +54,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 
-ROOT_URLCONF = 'music_project_backend.urls'
+ROOT_URLCONF = 'music_project.urls'
 
 TEMPLATES = [
     {
@@ -73,18 +72,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'music_project_backend.wsgi.application'
+WSGI_APPLICATION = 'music_project.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
@@ -130,3 +119,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ORIGIN_ALLOW_ALL=True
+
+
+try:
+    from music_project.local_settings import *
+except ImportError:
+    pass
