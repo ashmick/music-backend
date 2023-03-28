@@ -24,7 +24,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/songs/",
+					"raw": "http://127.0.0.1:8000/api/music/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -35,7 +35,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"songs",
+						"music",
 						""
 					]
 				}
@@ -43,13 +43,43 @@
 			"response": []
 		},
 		{
-			"name": "Add_A_Song",
+			"name": "Get_Song_By_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/music/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"music",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_A_New_Song",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"title\": \"No One\",\r\n        \"artist\": \"Alicia Keys\",\r\n        \"album\": \"Unbreakable\",\r\n        \"release_date\": \"12/1/2022\",\r\n        \"genre\" : \"Hip Hop\"\r\n}"
+					"raw": "{\r\n        \"title\": \"No One\",\r\n        \"artist\": \"Alicia Keys\",\r\n        \"album\": \"Unbreakable\",\r\n        \"release_date\": \"2022-03-27\",\r\n        \"genre\" : \"Hip Hop\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/music/",
@@ -64,6 +94,65 @@
 					"path": [
 						"api",
 						"music",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Song",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"title\": \"Single Ladies\",\r\n        \"artist\": \"Beyonce\",\r\n        \"album\": \"My Diary\",\r\n        \"release_date\": \"2022-03-27\",\r\n        \"genre\" : \"R&B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/music/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"music",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Song",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/music/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"music",
+						"1",
 						""
 					]
 				}
